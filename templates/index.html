@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>Sruthi Soppa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">🏊🏼🏊🏼‍♀️ My Website 🏊🏼🏊🏼‍♀️</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="fade-in">👾 Hey there, I'm Sruthi 🥽</h1>
+          <p class="fade-in-delay">Welcome to my digital world where creativity meets code.<br>Stay curious. Stay kind. 🌈</p>
+          <a href="#about" class="hero-btn">Dive In</a>
+        </div>
+      </section>
+      <section class="about-section" id="about">
+        <h2>💡 About Me</h2>
+        <div class="about-card">
+          <img src="{{ url_for('static', filename='images/sruthi_avatar.png') }}" alt="Sruthi Avatar" class="about-img">
+          <div class="about-text">
+            <h3>Sruthi 👾</h3>
+            <p>Hey! I'm a tech enthusiast who loves blending creativity with code. I believe in building things that matter<br> — with a smile on my face and a glass of milk in hand 🥛💻</p>
+          </div>
+        </div>
+         <!-- 💻 Projects Inside the About Section, After the Card -->
+  <div class="projects-wrapper">
+    <h2>🚀 My Top Projects</h2>
+    <div class="projects-container">
+      
+      
+
+      <div class="project-card">
+        <h3>Admission Predictor</h3>
+        <p>ML model to predict graduate admission chances. Clean UI + real datasets.</p>
+        <a href="https://github.com/sruthisoppa/Graduate-Admission-Prediction" target="_blank" class="project-link">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Railway Res System</h3>
+        <p>MERN stack-based booking system with secure auth & real-time seat data.</p>
+        <a href="https://github.com/sruthisoppa/Railway-Reservation-System" target="_blank" class="project-link">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Jokes Generator</h3>
+        <p>Joke Generator App is a fun and interactive web application built with React.</p>
+        <a href="https://github.com/sruthisoppa/Jokes_Generator" target="_blank" class="project-link">View on GitHub</a>
+      </div>
+
+    </div>
+  </div>
+      </section>
+    <section id="contact">
+    <h1>Contact Me</h1>
+    <div class="welcome-message">
+        
+        <p>We're excited to have you here. Explore, enjoy, and stay tuned for more!</p>
+    </div>
+
+
+    {% if name %}
+        <h2>Hello, Thank you for the love! 🎉</h2>
+    {% endif %}
+    <h2>See you soon</h2>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Leave a Message" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if visitors %}
+        <h3>🌟 Messages:</h3>
+        <ul>
+            {% for person in visitors %}
+                <li>{{ person.name }} – <small>{{ person.timestamp.strftime("%Y-%m-%d %H:%M:%S") }}</small></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</section>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
