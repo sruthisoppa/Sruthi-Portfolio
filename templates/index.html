@@ -14,13 +14,13 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <a href="#">🏊🏼🏊🏼‍♀️ My Website 🏊🏼🏊🏼‍♀️</a>
+            <a href="#">I think, therefore I am</a>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="burger" id="burger">
             <span></span>
@@ -28,7 +28,46 @@
             <span></span>
         </div>
     </nav>
-    <section class="hero-section">
+    <section class="hero-section" id ="home">
+      <div class="side-card-icon" id="side-card-icon" onclick="toggleSideCard()">📝</div>
+      <div class="side-card" id="side-card">
+        <h3>🌞 Mood Today</h3>
+        <p>Feeling: ✨ Grateful & Creative ✨</p>
+        <blockquote>"Creativity is intelligence having fun." – Einstein</blockquote>
+        <h3>📝 My Notes</h3>
+        <textarea placeholder="Write your thoughts here..."></textarea>
+        
+      </div>
+      <!-- Sticky Note Icon -->
+<div id="note-icon" class = "note-icon" onclick="toggleCard()">
+  🗒️
+</div>
+<div class = "stopwatch-icon" id="stopwatch-icon">🕒</div>
+
+<div class="hidden-card" id="stopwatch-card">
+  <div class="stopwatch-display" id="display">00:00:00</div>
+  <div class="stopwatch-buttons">
+    <button onclick="startStopwatch()">Start</button>
+    <button onclick="pauseStopwatch()">Pause</button>
+    <button onclick="resetStopwatch()">Reset</button>
+  </div>
+</div>
+
+<div class="containerr">
+  <h1 id="time"></h1>
+</div>
+<div class = "contain">
+  <p id="date"></p>
+</div>
+
+
+
+<div id="note-card" class="hidden-card">
+  <h3>🌼 My Thoughts</h3>
+  <textarea placeholder="Write here..."></textarea>
+</div>
+
+      
         <div class="hero-content">
           <h1 class="fade-in">👾 Hey there, I'm Sruthi 🥽</h1>
           <p class="fade-in-delay">Welcome to my digital world where creativity meets code.<br>Stay curious. Stay kind. 🌈</p>
@@ -70,6 +109,34 @@
 
     </div>
   </div>
+  </section>
+
+  <section id="services" class="services-section-alt">
+    <h2 class="section-title-alt">✨ What I Offer</h2>
+    <div class="services-grid">
+      <div class="service-box glass">
+        <i class="fas fa-laptop-code icon-alt"></i>
+        <h3>Full Stack Development</h3>
+        <p>Creating dynamic end-to-end web apps using MERN stack with real-time capabilities and elegant UI/UX design.</p>
+      </div>
+      <div class="service-box glass">
+        <i class="fas fa-code-branch icon-alt"></i>
+        <h3>Backend Engineering</h3>
+        <p>Designing scalable APIs, managing databases, and building secure authentication & middleware systems with Node.js.</p>
+      </div>
+      <div class="service-box glass">
+        <i class="fas fa-robot icon-alt"></i>
+        <h3>AI & ML Solutions</h3>
+        <p>Predictive modeling, computer vision, and automation using Python, TensorFlow, and scikit-learn.</p>
+      </div>
+      <div class="service-box retro-terminal">
+        <i class="fas fa-brain icon-alt"></i>
+        <h3>Smart Quiz App</h3>
+        <p>A C++ console app that generates quizzes on topics like math, history, and science. Tracks scores, randomizes questions, and provides feedback.</p>
+      </div>
+    </div>
+  </section>
+  
       </section>
     <section id="contact">
     <h1>Contact Me</h1>
@@ -100,4 +167,7 @@
 </section>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+<footer>
+  <p>Made with ❤️ by Sruthi | © 2025</p>
+</footer>
 </html>
